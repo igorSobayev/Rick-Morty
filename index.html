@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rick & Morty</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/rickMorty.js"></script>
+    <link href="estilo.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="imagenes/favicon.png"/>
+</head>
+
+<body>
+
+    <header>
+        <h1 class="titulo">Rick y Morty</h1>
+        <h2 class="subtitulo">Personajes</h2>
+    </header>
+
+    <hr>
+    <div class="opciones">
+        <h1>Instrucciones</h1>
+        <p>Bienvenido a la API de todos los personajes de la famosa serie 'Rick & Morty'.</p>
+        <p>Aquí hay diferentes formas de interactuar con la web.</p>
+        <ol>
+            <li>Generar 20 personajes aleatorios.</li>
+            <li>Buscar un personaje por nombre, o más de uno.</li>
+            <li>Buscar personajes por género.</li>
+            <li>Y finalmente buscar si están muertos o vivos.</li>
+        </ol>
+        <p>Puedes ir seleccionando opciones y los personajes se irán añadiendo uno dentras
+            de otro, en el momento que te aburras solo tienes que pulsar el botón 'Reiniciar' y todo
+            volverá al inicio.
+        </p>
+        <p>Tal vez no conozcas a nadie de la serie, ¡no pasa nada! Puedes probar con algunos
+            de los personajes más famosos de la serie como el extravagante cientifico <strong>'Rick'</strong> o su fiel
+            acompañante <strong>'Morty'</strong>. O a lo mejor quieres conocer a la familia de Morty, en tal caso prueba con
+            <strong>'Summer, Beth o Jerry'</strong>. Finalmente si no te convence ninguno de los que te ofrezco será
+            mejor que conozcas a <strong>'Mr. Meeseeks'</strong>, ¡seguro que te encantará!
+        </p>
+
+            <button id="todos">Generar aleatorios</button>
+
+            <p>
+                <button id="nombre-enviar">Buscar a</button>
+                <input type="text" name="nombre" id="nombre" placeholder="pickle" />
+            </p>
+
+            <h3>Género</h3>
+            <input type="radio" class="radio" id="genero1" name="gender" value="male">
+            <label for="genero1">Hombre</label>
+            <input type="radio" class="radio" id="genero2" name="gender" value="female">
+            <label for="genero2">Mujer</label>
+            <input type="radio" class="radio" id="genero3" name="gender" value="genderless">
+            <label for="genero3">Sin género</label>
+            <input type="radio" class="radio" id="genero4" name="gender" value="unknown">
+            <label for="genero4">Desconocido</label>
+            <button id="genero-enviar">Buscar por genero</button>
+
+            <h3>Los quieres ¿vivos o muertos?</h3>
+            <input type="radio" id="status1" name="status" value="alive">
+            <label for="status1">Vivo</label>
+            <input type="radio" id="status2" name="status" value="dead">
+            <label for="status2">Muerto</label>
+            <button id="status-enviar">Buscar</button>
+            <p><button id="reiniciar">Reiniciar</button></p>
+
+    </div>
+
+    <div class="fotos">
+
+    </div>
+    <footer>
+        <p>Creado por Igor Sobayev</p>
+    </footer>
+</body>
+
+</html>

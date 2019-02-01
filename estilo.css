@@ -1,4 +1,4 @@
-
+        /* Fuentes utilizadas para el título y el subtítulo */
         @font-face {
             font-family: titulo;
             src: url(fonts/rickMorty4.ttf);
@@ -9,56 +9,41 @@
             src: url(fonts/rickMorty1.ttf);
         }
 
+        /* Quito el margen y el padding del body y le doy un color de fondo oscuro */
         body {
             background-color: rgba(0, 0, 0, 0.774);
             overflow-x: hidden;
             margin: 0px;
             padding: 0px;
         }
+        /* Estilo al contenedor de las fotos, le aplico un display grid para que siempre
+            tenga cuatro columnas en un ancho total de la pantalla, cada una de 300px de ancho
+            Luego al disminuir el tamaño de la página voy a ir disminuyendo el número de
+            columnas con el fin de hacerla más responsive.
+            Le aplico un gap de 20px de separación entre cada tarjeta
+        */
         .fotos {
             display: grid;
             grid-template-columns: 300px 300px 300px 300px;
             justify-content: center;
             gap: 20px;
         }
-
+        /* Aplico un ancho fijo a cada tarjeta */
         .foto {
             max-width: 300px;
         }
 
+        /* Este contenedor va a contener la imagen de la cabecera y el nombre del personaje 
+            Le aplico un positivo relative porque al contenedor del título será absoluto
+        */
         .contenedor-cabecera {
             overflow: hidden;
             position: relative;
             padding-top: 5px;
         }
-
-        .contenedor-datos {
-            display: flex;
-            justify-content: space-between;
-            flex-direction: column;
-            background-color: rgb(36, 36, 36);
-            padding: 15px;
-            border-bottom-left-radius: 7px;
-            border-bottom-right-radius: 7px;
-        }
-
-        .contenido {
-            color: white;
-            text-align: center;
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid rgb(136, 136, 136);
-        }
-
-        .contenido p:first-child {
-            text-transform: uppercase;
-            color: rgb(158, 158, 158)
-        }
-
-        .contenido p:last-child {
-            color: rgb(230, 162, 36);
-        }
-
+        /* Aplico un alto y un ancho de 300px a la foto y le pongo los bordes de arriba 
+            redondeados. 
+        */
         .imagen-front {
             width: 300px;
             height: 300px;
@@ -67,6 +52,10 @@
             margin-bottom: 0;
         }
 
+        /* Doy estilos al contenedor del nombre, va a ocupar el 100% del ancho con un color 
+        oscuro, una opacidad del 0.8 para que sea transparente y de un toque elegante a la tarjeta
+        tendrá un position absolute para colocarse encima de la foto y la posiciono en la parte de
+        abajo de la foto*/
         .titulo-foto {
             width: 100%;
             background-color: rgb(22, 23, 26);
@@ -76,7 +65,7 @@
             padding: 0.625rem;
             margin: 0;
         }
-
+        /* Doy estilos al nombre del personaje en la tarjeta */
         .titulo-foto h2 {
             color: white;
             font-stretch: expanded;
@@ -85,13 +74,131 @@
             margin: 5px;
             margin-left: 0;
         }
-
+        /* Estilos al id del personaje */
         .titulo-foto p {
             font-size: 0.875rem;
             color: white;
             margin: 0;
         }
+        /* Contenedor que va a contener los datos traidos del JSON, será un flex que va a agrupar
+        el contenido en dos columnas, la primera columna será el nombre del campo y la segunda
+        el valor traido. Establezco un border a la parte de abajo de la tarjeta*/
+        .contenedor-datos {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            background-color: rgb(36, 36, 36);
+            padding: 15px;
+            border-bottom-left-radius: 7px;
+            border-bottom-right-radius: 7px;
+        }
+        /* El contenido seran todos los datos traidos del servidor. A su vez este será también flex
+        */
+        .contenido {
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgb(136, 136, 136);
+        }
+        /* Hago que el primer p de cada contenido, osea el nombre del campo este siempre en
+        mayusculas y de un color especifico*/
+        .contenido p:first-child {
+            text-transform: uppercase;
+            color: rgb(158, 158, 158)
+        }
+        /* Estilo para los datos traidos del servidor con un color especifico*/
+        .contenido p:last-child {
+            color: rgb(230, 162, 36);
+        }
 
+        /* Doy estilos al título de la página, establezco el tipo de fuente ya mencionado arriba
+        un color azul y una sombra de color amarillo, fiel al logo de la serie*/
+        .titulo {
+            font-family: titulo;
+            color: #0BAFCB;
+            text-shadow: -1px -1px 5px #CBE44E;
+            font-size: 7em;
+            margin-bottom: 15px;
+            margin-top: 15px;
+            letter-spacing: 5px;
+        }
+        /* El subtitulo es la palabra que aparece debajo de 'Rick y Morty' y tendrá otra fuente y color*/
+        .subtitulo {
+            font-family: subtitulo;
+            color: white;
+            font-size: 5em;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        /* Establezco un display flex para centrar los elementos del título*/
+        header {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Estilo para la barra de separación entre el título y las instrucciones*/
+        hr {
+            color: white;
+            width: 80%;
+            margin: auto;
+            box-shadow: 0px 0px 15px 0px #CBE44E;
+        }
+        /* Estilo para el contenido, el contenedor va a ocupar el 70% de la página y estará centrado
+            El texto aparece justificado*/
+        .opciones {
+            width: 70%;
+            margin: auto;
+            text-align: justify;
+            color: white;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        /* Estilo para los botones de la página, tendrán un pading de 10px y un color de fondo
+        igual al del color del títul. Los bordes estarán redondeados y le aplico una transition 
+        para cuando se haga el hover*/
+        button {
+            padding: 10px;
+            font-size: 1em;
+            background-color: #0BAFCB;
+            border: 0;
+            transition: all 0.4s;
+            border-radius: 7px;
+        }
+        /* Al hacer hover el botón crece y cambia de color*/
+        button:hover {
+            background-color: #CBE44E;
+            transform: scale(1.2);
+        }
+        /* Doy estilo al input del buscar por nombre*/
+        #nombre {
+            height: 35px;
+            font-size: 1em;
+            margin-left: 5px;
+        }
+        /* Un margin para que al crecer no se solape con el texto*/
+        #genero-enviar {
+            margin-left: 15px;
+        }
+        /* Una decoración para los titulos de las opciones*/
+        h3 {
+            text-decoration: underline;
+        }
+        /* Color amarillo a los nombres sugeridos para buscar*/
+        strong {
+            color:#CBE44E;
+        }
+        /* Estilo al footer*/
+        footer {
+            border-top: 1px solid white;
+            text-align: center;
+            color: white;
+        }
+        /* Estilos para diferentes tamaños de pantalla, a medida que se reduzca la pantalla
+        disminuyo el número de columnas a pintar*/
         @media (max-width: 1275px) {
 
             .fotos {
@@ -114,82 +221,3 @@
             }
         }
 
-        .titulo {
-            font-family: titulo;
-            color: #0BAFCB;
-            text-shadow: -1px -1px 5px #CBE44E;
-            font-size: 7em;
-            margin-bottom: 15px;
-            margin-top: 15px;
-            letter-spacing: 5px;
-        }
-
-        .subtitulo {
-            font-family: subtitulo;
-            color: white;
-            font-size: 5em;
-            margin-top: 0;
-            margin-bottom: 0;
-        }
-
-        header {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        hr {
-            color: white;
-            width: 80%;
-            margin: auto;
-            box-shadow: 0px 0px 15px 0px #CBE44E;
-        }
-
-        .opciones {
-            width: 70%;
-            margin: auto;
-            text-align: justify;
-            color: white;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-        }
-
-        button {
-            padding: 10px;
-            font-size: 1em;
-            background-color: #0BAFCB;
-            border: 0;
-            transition: all 0.4s;
-            border-radius: 7px;
-        }
-
-        button:hover {
-            background-color: #CBE44E;
-            transform: scale(1.2);
-        }
-
-        #nombre {
-            height: 35px;
-            font-size: 1em;
-            margin-left: 5px;
-        }
-
-        #genero-enviar {
-            margin-left: 15px;
-        }
-
-        h3 {
-            text-decoration: underline;
-        }
-
-        strong {
-            color:#CBE44E;
-        }
-
-        footer {
-            border-top: 1px solid white;
-            text-align: center;
-            color: white;
-        }
